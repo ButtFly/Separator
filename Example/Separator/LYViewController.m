@@ -50,6 +50,8 @@
     [self performSelector:@selector(changeSeparator:) withObject:des afterDelay:3];
     [_customLine addSeparators:@[des, pathDes]];
     
+    NSLog(@"%@", [[[@"   asd\na \rsd        " stringByReplacingOccurrencesOfString:@" " withString:@""] stringByReplacingOccurrencesOfString:@"\n" withString:@""] stringByReplacingOccurrencesOfString:@"\r" withString:@""]);
+    
 }
 
 - (void)changeSeparator:(LYSeparatorDescription *)separator {

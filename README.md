@@ -7,9 +7,11 @@
 
 ## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+详细的使用见 demo，因为最近比较忙，所以实现的功能不是很全面，如果您有更好的建议，请联系我。
 
 ## Requirements
+
+XCode 7以上
 
 ## Installation
 
