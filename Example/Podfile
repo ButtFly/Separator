@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Separator_Example', :exclusive => true do
+  pod "Separator", :path => "../"
+end
+
+target 'Separator_Tests', :exclusive => true do
+  pod "Separator", :path => "../"
+
+  pod 'FBSnapshotTestCase'
+end

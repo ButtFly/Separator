@@ -1,2 +1,29 @@
 # Separator
-一个轻量级的为视图添加分割线的工具
+
+[![CI Status](http://img.shields.io/travis/余河川/Separator.svg?style=flat)](https://travis-ci.org/余河川/Separator)
+[![Version](https://img.shields.io/cocoapods/v/Separator.svg?style=flat)](http://cocoapods.org/pods/Separator)
+[![License](https://img.shields.io/cocoapods/l/Separator.svg?style=flat)](http://cocoapods.org/pods/Separator)
+[![Platform](https://img.shields.io/cocoapods/p/Separator.svg?style=flat)](http://cocoapods.org/pods/Separator)
+
+## Usage
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+Separator is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "Separator"
+```
+
+## Author
+
+余河川, 315585758@qq.com
+
+## License
+
+Separator is available under the MIT license. See the LICENSE file for more info.
