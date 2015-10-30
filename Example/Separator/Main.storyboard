@@ -66,8 +66,40 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6r-j3-3xx">
                                 <rect key="frame" x="0.0" y="306" width="596" height="294"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yVP-3Y-AxR">
+                                        <rect key="frame" x="0.0" y="0.0" width="596" height="294"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <mutableString key="text">第一次执教NBA球队的比赛，比利-多诺万的雷霆在比赛最后关头表现沉着，反倒是冠军教头波波维奇的马刺率先乱了阵脚，雷霆队最终在主场球迷的助威声中6分险胜，多诺万在NBA生涯首秀上便收获了胜利，一场意义非凡的胜利。
+
+“球员们在关键时刻的沉着让我感到高兴。”多诺万说，“他们整场比赛都坚持战斗，我认为所有人心里都明白这场比赛志在必得。”
+
+杜兰特上赛季因伤缺席了大半个赛季，复出后的第一场常规赛，他表现中规中矩，拿下22分。
+
+“我知道这只是一场普通的常规赛，但在主场对阵马刺这样的强队，能够拿下复出后的首胜还是感觉挺不错的。”杜兰特说，“他（主帅多诺万）一直都很镇定，这多少也感染了我们。”
+
+前三节比赛，杜兰特找不到手感，他全场比赛只有19投6中，但在雷霆队最后13分里，他一人就贡献了7分，终场前稳定的两罚命中让雷霆队的胜利板上钉钉。
+
+不过，杜兰特得以在最后时刻有所发挥还要归功于兄弟威斯布鲁克的暴走。威少本场比赛狂砍33分10助攻，面对他凌厉的突破，马刺队束手无策。末节还剩4分钟时，威少送出本场第10次助攻，杜兰特将这次助攻转化为三分，雷霆队完成反超。
+
+“感觉棒极了。”谈到那记三分球，杜兰特说，“今晚我好几次投篮都涮框而出，这次投篮命中让我恢复了正常，这记三分球对于球队来说也很关键。”
+
+比赛最后56秒，威少在左侧底角命中关键三分，伦纳德立刻用一次打三分还以颜色，但马刺队在最后两回合的进攻中失去了章法，丹尼-格林仓促出手被帽后，马刺队彻底失去了胜利的希望。
+
+“我们犯了好几个错误，对手表现得更锐利。”波波维奇赛后表示，“我们在最后关头显得不够耐心，进攻端和防守端都有失误，要是能再齐心坚持一会儿就好了。”</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yVP-3Y-AxR" secondAttribute="bottom" id="5U8-J8-PxB"/>
+                                    <constraint firstAttribute="trailing" secondItem="yVP-3Y-AxR" secondAttribute="trailing" id="8U9-Ug-kTI"/>
+                                    <constraint firstItem="yVP-3Y-AxR" firstAttribute="top" secondItem="M6r-j3-3xx" secondAttribute="top" id="UHy-SI-Gwk"/>
+                                    <constraint firstItem="yVP-3Y-AxR" firstAttribute="leading" secondItem="M6r-j3-3xx" secondAttribute="leading" id="ztk-13-Xlj"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <animations/>
