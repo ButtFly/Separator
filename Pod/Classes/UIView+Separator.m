@@ -66,6 +66,8 @@
         self.stokeEnd = 1;
         self.relation = LYSeparatorHorizontalBottomSpace;
         self.constant = 0;
+        self.instanceCount = 1;
+        self.instanceTransform = CATransform3DIdentity;
         
     }
     return self;
@@ -114,6 +116,21 @@
     
 }
 
+
+- (void)setStokePath:(UIBezierPath *)stokePath {
+    
+    _stokePath = stokePath;
+    [self callDelegateUpdate];
+    
+}
+
+- (void)setCustomView:(UIView *)customView {
+    
+    _customView = customView;
+    [self callDelegateUpdate];
+    
+}
+
 - (void)callDelegateUpdate {
     
     if ([_delegate respondsToSelector:@selector(separatorDidUpdate:)]) {
@@ -123,6 +140,10 @@
 }
 
 @end
+
+
+
+
 
 
 
@@ -179,16 +200,39 @@
         
     }];
     [_separators enumerateObjectsUsingBlock:^(LYSeparatorDescription * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        /**
+         *  可以参考 CAReplicatorLayer 的用法
+         */
+        if (obj.customView) {
+            
+            CAReplicatorLayer *repLayer = [CAReplicatorLayer layer];
+            [self addSublayer:repLayer];
+            repLayer.frame = self.bounds;
+            [repLayer addSublayer:obj.customView.layer];
+            repLayer.instanceCount = obj.instanceCount;
+            repLayer.instanceDelay = obj.instanceDelay;
+            repLayer.instanceTransform = obj.instanceTransform;
+            repLayer.instanceColor = [obj.instanceColor CGColor];
+            repLayer.instanceRedOffset = obj.instanceRedOffset;
+            repLayer.instanceGreenOffset = obj.instanceGreenOffset;
+            repLayer.instanceBlueOffset = obj.instanceBlueOffset;
+            repLayer.instanceAlphaOffset = obj.instanceAlphaOffset;
+            [repLayer layoutIfNeeded];
+            
+        } else {
         
-        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-        [self addSublayer:shapeLayer];
-        UIBezierPath *bezierPath = obj.stokePath ? obj.stokePath : [self bezierPathWithSeparator:obj inRect:self.bounds];
-        shapeLayer.path = [bezierPath CGPath];
-        shapeLayer.strokeColor = [obj.stokeColor CGColor];
-        shapeLayer.strokeStart = obj.stokeStart;
-        shapeLayer.strokeEnd = obj.stokeEnd;
-        shapeLayer.lineWidth = obj.lineWidth;
-        shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+            CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+            [self addSublayer:shapeLayer];
+            shapeLayer.frame = self.bounds;
+            UIBezierPath *bezierPath = obj.stokePath ? obj.stokePath : [self bezierPathWithSeparator:obj inRect:self.bounds];
+            shapeLayer.path = [bezierPath CGPath];
+            shapeLayer.strokeColor = [obj.stokeColor CGColor];
+            shapeLayer.strokeStart = obj.stokeStart;
+            shapeLayer.strokeEnd = obj.stokeEnd;
+            shapeLayer.lineWidth = obj.lineWidth;
+            shapeLayer.fillColor = [[UIColor clearColor] CGColor];
+            
+        }
         obj.delegate = self;
         
     }];

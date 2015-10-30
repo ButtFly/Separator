@@ -59,6 +59,48 @@ typedef NS_ENUM(NSInteger, LYSeparatorRelation) {
  *  线结束绘制的位置
  */
 @property (nonatomic, assign) CGFloat stokeEnd;
+
+/**
+ *  使用了 customView 时，将会忽略 relation 以及 constant，lineWidth，stokeColor，stokeStart，stokeEnd，并且使下面的属性生效
+ */
+@property (nonatomic, strong) UIView *customView;
+
+/**
+ *  customView 重复的次数
+ */
+
+@property (nonatomic, assign) NSInteger instanceCount;
+
+
+//@property BOOL preservesDepth;
+
+/**
+ *  下一个对象重复上一个对象动作的延时
+ */
+
+@property (nonatomic, assign) CFTimeInterval instanceDelay;
+
+/**
+ *  下一个对象对上一个对象的偏移
+ */
+
+@property (nonatomic, assign) CATransform3D instanceTransform;
+
+/**
+ *  这个颜色将使得重复的对象乘以 customView 的颜色
+ */
+
+@property (nonatomic, strong) UIColor *instanceColor;
+
+/**
+ *  将使下一个对象的 instanceColor 按照下面的属性偏移变化
+ */
+
+@property (nonatomic, assign) CGFloat instanceRedOffset;
+@property (nonatomic, assign) CGFloat instanceGreenOffset;
+@property (nonatomic, assign) CGFloat instanceBlueOffset;
+@property (nonatomic, assign) CGFloat instanceAlphaOffset;
+
 /**
  *  创建一个描述对象
  *
@@ -69,6 +111,7 @@ typedef NS_ENUM(NSInteger, LYSeparatorRelation) {
 + (instancetype)separatorWithName:(NSString *)name;
 
 @end
+
 
 
 
