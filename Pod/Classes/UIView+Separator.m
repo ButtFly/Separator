@@ -33,7 +33,7 @@
 /**
  *  table 分割线 颜色
  */
-#define LYTableSeparatorColor [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1]
+#define LYTableSeparatorColor [UIColor colorWithRed:200/255.0 green:199/255.0 blue:204/255.0 alpha:1]
 
 #pragma mark - LYSeparatorDescription
 @interface LYSeparatorDescription()
